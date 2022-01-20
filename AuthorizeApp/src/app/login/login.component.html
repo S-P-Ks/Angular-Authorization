@@ -1,0 +1,41 @@
+<div class="row">
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    {{ error }}
+  </div>
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">Login Form</div>
+      <div class="card-body">
+        <form class="form" [formGroup]="LoginForm">
+          <div class="form-group mb-4">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control rounded-0"
+              formControlName="email"
+              required
+            />
+          </div>
+          <div class="form-group mb-4">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control rounded-0"
+              required
+            />
+          </div>
+          <button
+            (click)="login()"
+            type="button"
+            class="btn btn-primary float-right"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
