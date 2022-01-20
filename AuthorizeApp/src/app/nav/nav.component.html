@@ -1,0 +1,7 @@
+<form *ngIf="!loggedIn" class="d-flex">
+  <button class="btn btn-success" routerLink="/login">Login</button>&nbsp;
+  <button class="btn btn-danger" routerLink="/register">Register</button>
+</form>
+<form *ngIf="loggedIn" class="d-flex">
+  <button (click)="logOut()" class="btn btn-success">Logout</button>&nbsp;
+</form>

@@ -23,10 +23,7 @@
           <a class="nav-link" routerLink="/special">Special</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <button class="btn btn-success" routerLink="/login">Login</button>&nbsp;
-        <button class="btn btn-danger" routerLink="/register">Register</button>
-      </form>
+      <app-nav [loggedin]="loggedIn"></app-nav>
     </div>
   </div>
 </nav>

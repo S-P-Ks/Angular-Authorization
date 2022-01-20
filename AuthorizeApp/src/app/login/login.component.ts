@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/events']);
+        this.router.navigate(['/special']);
       },
       (err) => ((this.error = err.error), this.vanishError()),
       () => console.log('Login Completed')

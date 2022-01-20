@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SpecialService } from './special.service';
 
 @Component({
@@ -8,12 +9,12 @@ import { SpecialService } from './special.service';
 })
 export class SpecialEventsComponent implements OnInit {
   special: any;
-  constructor(private specialService: SpecialService) {}
+  constructor(private specialService: SpecialService, private router: Router) {}
 
   ngOnInit(): void {
     this.specialService.getSpecial().subscribe(
       (res) => ((this.special = res), console.log(res)),
-      (err) => console.log(err),
+      (err) => this.router.navigate(['/login']),
       () => console.log('Completed getting Special Events')
     );
   }
